@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asset Library</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS via CDN for instant publishing anywhere -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Nunito', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            display: ['Fredoka', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom CSS */
+    body {
+      background-color: #0b0730;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .text-magical-gradient {
+      background: linear-gradient(180deg, #FFEF95 0%, #FFB63B 35%, #59D6FF 65%, #2671FF 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0px 4px 6px rgba(0, 0, 100, 0.4));
+    }
+
+    .text-stroke-primary {
+      -webkit-text-stroke: 2px #180963;
+    }
+
+    .text-stroke-secondary {
+      -webkit-text-stroke: 1.5px #6b2dd1;
+    }
+
+    .glass-panel {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    .glass-nav {
+      background: linear-gradient(90deg, rgba(39, 13, 107, 0.7) 0%, rgba(66, 114, 184, 0.7) 50%, rgba(39, 13, 107, 0.7) 100%);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid rgba(131, 226, 255, 0.6);
+      border-top: 2px solid rgba(199, 131, 255, 0.6);
+    }
+
+    .glow-box {
+      box-shadow: 0 0 20px rgba(89, 214, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+    .glow-text {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(96, 203, 255, 0.8);
+    }
+
+    /* CSS Animations replacing React Motion */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); transform: scale(1); }
+      50% { box-shadow: 0 0 50px rgba(255, 255, 255, 0.8); transform: scale(1.02); }
+    }
+    @keyframes star-twinkle {
+      0%, 100% { opacity: 0.8; transform: scale(1) rotate(0deg); }
+      50% { opacity: 0.3; transform: scale(0.8) rotate(15deg); }
+    }
+
+    .animate-float { animation: float 4s ease-in-out infinite; }
+    .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+    .animate-star-1 { animation: star-twinkle 3s ease-in-out infinite; }
+    .animate-star-2 { animation: star-twinkle 4s ease-in-out infinite 1s; }
+    .animate-star-3 { animation: star-twinkle 3.5s ease-in-out infinite 0.5s; }
+    
+    .hover-card-move {
+      transition: transform 0.3s ease;
+    }
+    .hover-card-move:hover {
+      transform: translateY(-8px);
+    }
+  </style>
+</head>
+<body class="bg-[#0A0B1A] min-h-screen relative overflow-hidden font-sans">
+  
+  <!-- Magical Space Background Layers -->
+  <div class="absolute inset-0 pointer-events-none -z-10 fixed">
+    <!-- Core Nebula Gradients -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,#1e1450_0%,transparent_50%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,#0c2c5c_0%,transparent_60%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_right_center,#2d0854_0%,transparent_40%)]"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#00d2ff_0%,transparent_20%)] opacity-20 mix-blend-screen"></div>
+    
+    <!-- Sparkles / Stars -->
+    <div class="absolute inset-0 opacity-40 mix-blend-screen mix-blend-color-dodge transition-all"
+         style="background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px), radial-gradient(circle, rgba(131,226,255,0.6) 2px, transparent 2px); background-size: 40px 40px, 100px 100px; background-position: 0 0, 20px 20px;"></div>
+    
+    <!-- Additional glowing orbs -->
+    <div class="absolute top-[20%] left-[10%] w-32 h-32 bg-purple-500 rounded-full mix-blend-screen filter blur-[60px] opacity-40"></div>
+    <div class="absolute bottom-[30%] right-[10%] w-48 h-48 bg-blue-500 rounded-full mix-blend-screen filter blur-[80px] opacity-30"></div>
+    <div class="absolute top-[60%] left-[50%] -translate-x-1/2 w-64 h-64 bg-teal-400 rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-2 left-0 right-0 z-50 px-4">
+    <div class="glass-nav rounded-full mx-auto max-w-lg px-6 flex items-center justify-between py-3 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+      <ul class="flex space-x-4 md:space-x-6 text-sm font-semibold tracking-wide flex-1 justify-center relative left-2">
+        <li><a href="#" class="hover:text-blue-200 transition-colors bg-white/20 px-3 py-1 rounded-full shadow-[inset_0_1px_3px_rgba(255,255,255,0.5)]" data-i18n="nav_home"></a></li>
+        <li><a href="#" class="hover:text-blue-200 transition-colors px-2 py-1" data-i18n="nav_features"></a></li>
+        <li><a href="#" class="hover:text-blue-200 transition-colors px-2 py-1" data-i18n="nav_community"></a></li>
+        <li><a href="#" class="hover:text-blue-200 transition-colors px-2 py-1" data-i18n="nav_support"></a></li>
+      </ul>
+      <div class="flex gap-2 text-white">
+        <button onclick="toggleLanguage()" class="flex flex-row items-center justify-center gap-1 text-blue-100 hover:text-white transition-colors bg-white/10 px-2.5 py-1.5 rounded-full border border-white/20">
+          <i data-lucide="globe" class="w-4 h-4"></i>
+          <span id="lang-btn-text" class="text-[11px] font-bold uppercase w-4 text-center">EN</span>
+        </button>
+        <button class="text-blue-100 hover:text-white transition-colors bg-white/10 p-1.5 rounded-full border border-white/20">
+          <i data-lucide="settings" class="w-[18px] h-[18px]"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-1 flex flex-col z-10 relative">
+    
+    <!-- Hero Section -->
+    <section class="relative flex flex-col items-center justify-center pt-32 pb-12 px-4 min-h-[70vh]">
+      
+      <!-- Title -->
+      <div class="text-center mb-6 z-20">
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider leading-tight flex flex-col items-center">
+          <span class="text-magical-gradient text-stroke-primary drop-shadow-xl block" data-i18n="title_part1"></span>
+          <span class="text-magical-gradient text-stroke-secondary text-4xl md:text-5xl lg:text-6xl -mt-2" data-i18n="title_part2"></span>
+        </h1>
+        <p class="mt-4 text-sm md:text-base font-semibold max-w-sm mx-auto text-blue-50 glow-text drop-shadow" data-i18n="subtitle"></p>
+      </div>
+
+      <!-- Main Image Area -->
+      <div class="relative w-full max-w-sm aspect-square my-4 z-10 flex items-center justify-center">
+        <!-- Magical glow behind pet -->
+        <div class="absolute inset-0 bg-blue-400/30 blur-3xl rounded-full scale-110 mix-blend-screen -z-10"></div>
+        
+        <div class="relative z-10 w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center text-[10rem] drop-shadow-[0_0_30px_rgba(255,255,255,0.6)] animate-float">
+          <!-- Placeholder pet -->
+          <span class="font-sans">🐹</span>
+          
+          <div class="absolute bottom-4 right-10 text-6xl drop-shadow-[0_0_15px_rgba(255,50,50,0.8)]">
+            🍓
+          </div>
+        </div>
+
+        <!-- Floating background elements -->
+        <div class="absolute top-10 left-10 text-3xl drop-shadow-lg opacity-80 animate-star-1">✨</div>
+        <div class="absolute -bottom-4 left-4 text-4xl drop-shadow-lg opacity-80 animate-star-2">⭐</div>
+        <div class="absolute top-20 right-4 text-3xl drop-shadow-lg opacity-80 animate-star-3">💎</div>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 z-20 relative">
+        <button class="relative group w-56 transform transition-transform hover:scale-105 active:scale-95">
+          <div class="absolute inset-0 bg-gradient-to-b from-yellow-300 via-yellow-500 to-orange-600 rounded-xl blur-sm group-hover:blur opacity-70 transition-all"></div>
+          <div class="relative flex items-center justify-center gap-3 bg-gradient-to-b from-blue-400 to-blue-700 border-2 border-yellow-300 text-white px-6 py-3 rounded-xl shadow-[inset_0_2px_4px_rgba(255,255,255,0.4)] overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1/2 bg-white/10 pointer-events-none"></div>
+            <i data-lucide="apple" class="w-7 h-7 fill-white"></i>
+            <div class="text-left leading-tight">
+              <div class="text-[10px] text-blue-100 uppercase tracking-wide font-bold" data-i18n="btn_apple_sub"></div>
+              <div class="text-lg font-bold" data-i18n="btn_apple_main"></div>
+            </div>
+          </div>
+        </button>
+
+        <button class="relative group w-56 transform transition-transform hover:scale-105 active:scale-95">
+          <div class="absolute inset-0 bg-gradient-to-b from-yellow-300 via-yellow-500 to-orange-600 rounded-xl blur-sm group-hover:blur opacity-70 transition-all"></div>
+          <div class="relative flex items-center justify-center gap-3 bg-gradient-to-b from-blue-400 to-blue-700 border-2 border-yellow-300 text-white px-6 py-3 rounded-xl shadow-[inset_0_2px_4px_rgba(255,255,255,0.4)] overflow-hidden">
+             <div class="absolute top-0 left-0 right-0 h-1/2 bg-white/10 pointer-events-none"></div>
+            <i data-lucide="play" class="w-7 h-7 fill-white drop-shadow"></i>
+            <div class="text-left leading-tight">
+              <div class="text-[10px] text-blue-100 uppercase tracking-wide font-bold" data-i18n="btn_google_sub"></div>
+              <div class="text-lg font-bold" data-i18n="btn_google_main"></div>
+            </div>
+          </div>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Features Section -->
+    <section class="relative z-10 px-4 pb-20 max-w-5xl mx-auto w-full">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-white">
+        
+        <!-- Card 1 -->
+        <div class="group relative hover-card-move">
+          <!-- Crystal border effect -->
+          <div class="absolute -inset-1 bg-gradient-to-b from-blue-200 via-indigo-300 to-purple-400 rounded-3xl opacity-50 blur-[2px]"></div>
+          
+          <div class="relative h-full flex flex-col items-center text-center p-6 rounded-2xl glass-panel bg-gradient-to-b from-purple-500/40 to-blue-600/40 border-t border-white/40 shadow-xl overflow-hidden cursor-pointer">
+            <div class="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/20 to-transparent pointer-events-none"></div>
+            <div class="text-6xl md:text-7xl mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] transition-transform group-hover:scale-110 group-hover:rotate-6">🐹</div>
+            <h3 class="font-display text-xl font-bold mb-2 text-white drop-shadow-md" data-i18n="feat1_title"></h3>
+            <p class="text-sm text-blue-50/90 leading-relaxed font-semibold" data-i18n="feat1_desc"></p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="group relative hover-card-move" style="animation-delay: 0.1s;">
+          <div class="absolute -inset-1 bg-gradient-to-b from-blue-200 via-indigo-300 to-purple-400 rounded-3xl opacity-50 blur-[2px]"></div>
+          <div class="relative h-full flex flex-col items-center text-center p-6 rounded-2xl glass-panel bg-gradient-to-b from-red-500/40 to-purple-600/40 border-t border-white/40 shadow-xl overflow-hidden cursor-pointer">
+            <div class="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/20 to-transparent pointer-events-none"></div>
+            <div class="text-6xl md:text-7xl mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] transition-transform group-hover:scale-110 group-hover:-rotate-3">🍓</div>
+            <h3 class="font-display text-xl font-bold mb-2 text-white drop-shadow-md" data-i18n="feat2_title"></h3>
+            <p class="text-sm text-blue-50/90 leading-relaxed font-semibold" data-i18n="feat2_desc"></p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="group relative hover-card-move" style="animation-delay: 0.2s;">
+          <div class="absolute -inset-1 bg-gradient-to-b from-blue-200 via-indigo-300 to-purple-400 rounded-3xl opacity-50 blur-[2px]"></div>
+          <div class="relative h-full flex flex-col items-center text-center p-6 rounded-2xl glass-panel bg-gradient-to-b from-pink-500/40 to-rose-600/40 border-t border-white/40 shadow-xl overflow-hidden cursor-pointer">
+            <div class="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-white/20 to-transparent pointer-events-none"></div>
+            <div class="text-6xl md:text-7xl mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.7)] transition-transform group-hover:scale-110 group-hover:rotate-3">💖</div>
+            <h3 class="font-display text-xl font-bold mb-2 text-white drop-shadow-md" data-i18n="feat3_title"></h3>
+            <p class="text-sm text-blue-50/90 leading-relaxed font-semibold" data-i18n="feat3_desc"></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Translations and Interactive Logic -->
+  <script>
+    const translations = {
+      en: {
+        nav_home: 'Home',
+        nav_features: 'Game Features',
+        nav_community: 'Community',
+        nav_support: 'Support',
+        title_part1: 'Asset',
+        title_part2: 'Library',
+        subtitle: 'Collect Magical Pets. Solve Crystal Puzzles. Share the Love.',
+        btn_apple_sub: 'Pre-order on',
+        btn_apple_main: 'App Store',
+        btn_google_sub: 'Get it on',
+        btn_google_main: 'Google Play',
+        feat1_title: 'Magical Pets',
+        feat1_desc: 'Adopt and care for unique glowing companions.',
+        feat2_title: 'Crystal Puzzles',
+        feat2_desc: 'Match enchanting crystals in dazzling levels.',
+        feat3_title: 'Daily Social Care',
+        feat3_desc: 'Connect with friends and send gifts daily.',
+      },
+      zh: {
+        nav_home: '首页',
+        nav_features: '游戏特色',
+        nav_community: '社区',
+        nav_support: '支持',
+        title_part1: '素材',
+        title_part2: '库',
+        subtitle: '收集魔法守护者，解开水晶谜题，分享你的热爱。',
+        btn_apple_sub: '即刻预订',
+        btn_apple_main: 'App Store',
+        btn_google_sub: '立即获取',
+        btn_google_main: 'Google Play',
+        feat1_title: '魔法宠物',
+        feat1_desc: '领养并照顾发光的专属陪伴宠物。',
+        feat2_title: '水晶谜题',
+        feat2_desc: '在耀眼的关卡中匹配迷人的水晶。',
+        feat3_title: '日常社交',
+        feat3_desc: '每天与朋友联系并互相赠送礼物。',
+      }
+    };
+
+    let currentLang = 'zh';
+
+    function updateLanguage() {
+      const dict = translations[currentLang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.textContent = dict[key];
+        }
+      });
+      // Toggle button text shows the other language's abbreviation
+      document.getElementById('lang-btn-text').textContent = currentLang === 'en' ? '中' : 'EN';
+    }
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'zh' : 'en';
+      updateLanguage();
+    }
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Initial translation render
+    updateLanguage();
+  </script>
+</body>
+</html>
